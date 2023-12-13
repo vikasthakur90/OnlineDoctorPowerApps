@@ -1,0 +1,85 @@
+Header As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =100
+    Width: =Max(App.Width, App.MinScreenWidth)
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Label1_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =45
+        Size: =15
+        Text: ="Online Doctor Appoitment"
+        Width: =293
+        X: =37
+        Y: =27
+        ZIndex: =2
+
+    Button1_1 As button:
+        BorderStyle: =BorderStyle.None
+        Height: =100
+        Text: ="Home"
+        Width: =
+        X: =308
+        ZIndex: =3
+
+    Rectangle1_1 As rectangle:
+        Width: =1366
+        ZIndex: =4
+
+    Label1_2 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =50
+        Size: =20
+        Text: ="Online Doctor Appoitment"
+        Width: =389
+        X: =87
+        Y: =25
+        ZIndex: =5
+
+    Button1_2 As button:
+        BorderStyle: =BorderStyle.None
+        Height: =100
+        OnSelect: =Navigate(HomePage);
+        Text: ="Home"
+        Width: =143
+        X: =792
+        ZIndex: =6
+
+    Button1_3 As button:
+        BorderStyle: =BorderStyle.None
+        Height: =100
+        Text: ="About Us"
+        Width: =143
+        X: =935
+        ZIndex: =7
+
+    Button1_4 As button:
+        BorderStyle: =BorderStyle.None
+        Height: =100
+        OnSelect: =Navigate(RegisterPage,ScreenTransition.Cover);
+        Text: ="Register"
+        Width: =143
+        X: =1078
+        ZIndex: =8
+
+    Button1_5 As button:
+        BorderStyle: =BorderStyle.None
+        Height: =100
+        OnSelect: =Navigate(RegisterPage,ScreenTransition.Cover);
+        Text: ="Login"
+        Width: =143
+        X: =1221
+        ZIndex: =9
+
+    Icon1 As icon.BackArrow:
+        Height: =48
+        Icon: =Icon.BackArrow
+        OnSelect: =Back();
+        Width: =62
+        Y: =27
+        ZIndex: =10
+

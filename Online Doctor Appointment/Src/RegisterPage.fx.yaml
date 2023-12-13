@@ -1,0 +1,86 @@
+RegisterPage As screen:
+    OnVisible: =true
+
+    Rectangle1 As rectangle:
+        Height: =368
+        Width: =536
+        X: =50
+        Y: =230
+        ZIndex: =1
+
+    Rectangle3 As rectangle:
+        Height: =368
+        Width: =562
+        X: =748
+        Y: =230
+        ZIndex: =2
+
+    Header_2 As Header:
+        ZIndex: =3
+
+    Button6 As button:
+        Fill: =RGBA(255, 191, 0, 1)
+        Height: =55
+        OnSelect: |-
+            =Navigate(DoctorRegister);
+            NewForm(Form1);
+        Text: ="Register"
+        Width: =162
+        X: =102
+        Y: =474
+        ZIndex: =4
+
+    Button7 As button:
+        Fill: =RGBA(54, 176, 75, 1)
+        Height: =55
+        OnSelect: =Navigate(DoctorLogin)
+        Text: ="Login"
+        Width: =175
+        X: =342
+        Y: =474
+        ZIndex: =5
+
+    Button6_1 As button:
+        Fill: =RGBA(255, 191, 0, 1)
+        Height: =55
+        OnSelect: =Navigate(PatientRegister,ScreenTransition.Cover);
+        Text: ="Register"
+        Width: =162
+        X: =819
+        Y: =474
+        ZIndex: =6
+
+    Button7_1 As button:
+        Fill: =RGBA(54, 176, 75, 1)
+        Height: =55
+        OnSelect: =Navigate(PatientLogin,ScreenTransition.Cover);
+        Text: ="Login"
+        Width: =175
+        X: =1061
+        Y: =474
+        ZIndex: =7
+
+    Image3 As image:
+        Height: =112
+        Image: ='2131.12-doctor-icon-iconbunny'
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =115
+        X: =242
+        Y: =282
+        ZIndex: =8
+
+    Image5 As image:
+        Height: =125
+        Image: =images
+        RadiusBottomLeft: =70
+        RadiusBottomRight: =70
+        RadiusTopLeft: =70
+        RadiusTopRight: =70
+        Width: =122
+        X: =966
+        Y: =282
+        ZIndex: =9
+

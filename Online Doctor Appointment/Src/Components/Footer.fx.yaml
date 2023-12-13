@@ -1,0 +1,102 @@
+Footer As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =280
+    Width: =Max(App.Width, App.MinScreenWidth)
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Rectangle2 As rectangle:
+        Fill: =RGBA(26, 26, 26, 1)
+        Height: =275
+        Width: =1364
+        ZIndex: =1
+
+    Label3_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =52
+        Text: ="Take Appointement Any time Just a Click away. Book your First Appointement now"
+        Width: =750
+        X: =307
+        Y: =23
+        ZIndex: =2
+
+    Icon2_1 As icon.Phone:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =38
+        Icon: =Icon.Phone
+        Width: =39
+        X: =133
+        Y: =93
+        ZIndex: =3
+
+    Icon3_1 As icon.Mail:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =38
+        Icon: =Icon.Mail
+        Width: =37
+        X: =644
+        Y: =93
+        ZIndex: =4
+
+    Icon1_1 As icon.Home:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =38
+        Icon: =Icon.Home
+        Width: =58
+        X: =1101
+        Y: =93
+        ZIndex: =5
+
+    Label4_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =74
+        Size: =10
+        Text: |-
+            ="CONTACT NUMBER
+            +91-6784512096
+            +91-9084512096"
+        Width: =146
+        X: =106
+        Y: =150
+        ZIndex: =6
+
+    Label5_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =44
+        Size: =10
+        Text: |-
+            ="EMAIL
+            arogyam123@gmail.com"
+        Width: =193
+        X: =566
+        Y: =150
+        ZIndex: =7
+
+    Label6_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =55
+        Size: =10
+        Text: |-
+            ="ADDRESS
+            Yash Technologies,Crystal IT Park, Indore"
+        Width: =197
+        X: =1031
+        Y: =150
+        ZIndex: =8
+
+    Label1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =39
+        Text: |-
+            ="© 2020 Copyright: doctorAppointment.com"
+        Width: =414
+        X: =434
+        Y: =224
+        ZIndex: =9
+

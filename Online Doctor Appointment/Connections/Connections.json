@@ -1,0 +1,95 @@
+{
+  "044ec1df-6b25-4b28-86e3-f279b6b62e89": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://8gwcl4.sharepoint.com/sites/OnlineDoctorAppointment": {
+        "dataSources": {
+          "Appointment": {
+            "tableName": "5cac9f91-c036-4961-97f4-eec8af2e30d3"
+          },
+          "DoctorList": {
+            "tableName": "b48158d1-9668-497c-bef8-44ef97a5c734"
+          },
+          "PatientData": {
+            "tableName": "bda9cec1-68a8-4a67-8ab3-f945043eb738"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "DoctorList",
+      "PatientData",
+      "Appointment"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "044ec1df-6b25-4b28-86e3-f279b6b62e89"
+  },
+  "6d54b03f-1c79-427f-8056-88d1e0f60155": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1669/1.0.1669.3522/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "d41d4543-6a53-4146-964d-b7772c9dbc4c"
+    ],
+    "id": "6d54b03f-1c79-427f-8056-88d1e0f60155"
+  },
+  "d41d4543-6a53-4146-964d-b7772c9dbc4c": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "6d54b03f-1c79-427f-8056-88d1e0f60155": {
+          "value": "shared_office365"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "2dba8782-c33f-4d79-8614-02eaf68c7d25"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "6d54b03f-1c79-427f-8056-88d1e0f60155"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "2dba8782-c33f-4d79-8614-02eaf68c7d25"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "PowerApp->Sendanemail(V2)-2"
+    ],
+    "dependencies": {
+      "shared_office365": "6d54b03f-1c79-427f-8056-88d1e0f60155"
+    },
+    "dependents": [],
+    "id": "d41d4543-6a53-4146-964d-b7772c9dbc4c"
+  }
+}
