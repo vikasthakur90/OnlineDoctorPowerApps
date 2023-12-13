@@ -1,0 +1,127 @@
+Component1 As CanvasComponent:
+    ExpandMenu: =true
+    Fill: =RGBA(0,0,0,0)
+    Height: =640
+    labelValue: =docemail
+    MenuItems: |-
+        =Table(
+            {
+                Menulabel: "Today Appointment",
+                MenuIcon: Icon.CalendarBlank,
+                MenuScreeNavigate: App.ActiveScreen,
+                MenuId:1
+            },
+            {
+                Menulabel: "Patient List",
+                MenuIcon: Icon.DetailList,
+                MenuScreeNavigate: App.ActiveScreen,
+                MenuId:2
+            },{
+                Menulabel: "Edit Profile",
+                MenuIcon: Icon.Edit,
+                MenuScreeNavigate: App.ActiveScreen,
+                MenuId:3
+            },
+            {
+                Menulabel: "Logout",
+                MenuIcon: Icon.Leave,
+                MenuScreeNavigate: App.ActiveScreen,
+                MenuId:4
+            }
+        
+        )
+    MenuWidth: =If(showMenu,Component1.SetMenuWidth,Icon5.Width)
+    OnReset: =Set(showMenu,Component1.ExpandMenu);
+    SetMenuWidth: =300
+    Width: |
+        =//Component1.MenuWidth
+        300
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Icon2 As icon.Hamburger:
+        Height: =56
+        Icon: =Icon.Hamburger
+        OnSelect: =Set(showMenu,!showMenu)
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Width: =52
+        ZIndex: =1
+
+    Gallery1 As gallery.variableTemplateHeightGallery:
+        DelayItemLoading: =true
+        Height: =392
+        Items: =Component1.MenuItems
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =156
+        Visible: |-
+            =//showMenu
+            true
+        Width: |-
+            =//If(showMenu,Component1.MenuWidth,Icon5.Width)
+            300
+        Y: =202
+        ZIndex: =2
+
+        Rectangle10 As rectangle:
+            Height: =50
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.MenuScreeNavigate = App.ActiveScreen
+            Width: =12
+            Y: =2
+            ZIndex: =4
+
+        Icon5 As icon.Home:
+            Height: =60
+            Icon: =ThisItem.MenuIcon
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            Width: =52
+            X: =12
+            ZIndex: =5
+
+        Label10 As label:
+            Font: =Font.Arial
+            FontWeight: =FontWeight.Lighter
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: =ThisItem.Menulabel
+            Width: =200
+            X: =64
+            Y: =20
+            ZIndex: =6
+
+        Button1 As button:
+            Fill: =Color.Transparent
+            Height: =Label10.Height+Label10.Y
+            HoverFill: =Color.Transparent
+            OnSelect: =Navigate(ThisItem.MenuScreeNavigate,ScreenTransition.Cover)
+            PressedFill: =Color.Transparent
+            Text: =""
+            Width: =Parent.Width
+            ZIndex: =7
+
+    Image8 As image:
+        Image: =User().Image
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        X: =103
+        Y: =59
+        ZIndex: =3
+
+    Label6 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Text: =Component1.labelValue
+        Width: =186
+        X: =52
+        Y: =162
+        ZIndex: =4
+

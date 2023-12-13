@@ -1,0 +1,131 @@
+DoctorHome As screen:
+
+    Component1_1 As Component1:
+        Fill: |+
+            =RGBA(0,0,0,0)
+            
+            
+            
+            
+            
+            
+            
+            
+        Height: =765
+        MenuItems: |-
+            =Table(
+                {
+                    Menulabel: "Today Appointment",
+                    MenuIcon: Icon.CalendarBlank,
+                    MenuScreeNavigate: DoctorHome,
+                    MenuId:1
+                },
+                {
+                    Menulabel: "Patient List",
+                    MenuIcon: Icon.DetailList,
+                    MenuScreeNavigate: PatientList,
+                    MenuId:2
+                },{
+                    Menulabel: "Edit Profile",
+                    MenuIcon: Icon.Edit,
+                    MenuScreeNavigate: EditDocProfile,
+                    MenuId:3
+                },
+                {
+                    Menulabel: "Logout",
+                    MenuIcon: Icon.Leave,
+                    MenuScreeNavigate: DoctorLogin,
+                    MenuId:4
+                }
+            
+            )
+        Width: =272
+
+    "Gallery8 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Items: =appoint1
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =104
+        Width: =834
+        X: =350
+        Y: =116
+        ZIndex: =2
+
+        Image16 As image:
+            Height: =72
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =72
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title5 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =103
+            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle4.Size * 1.8)) / 2
+            ZIndex: =2
+
+        Subtitle4 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =38
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =ThisItem.PatientName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =121
+            X: =Title5.X
+            Y: =38
+            ZIndex: =3
+
+        Separator3 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =96
+            ZIndex: =5
+
+        Rectangle13 As rectangle:
+            Height: =Parent.TemplateHeight - Separator3.Height
+            OnSelect: =Select(Parent)
+            Visible: =If(ThisItem.IsSelected, true, false)
+            Width: =4
+            ZIndex: =6
+
+        Button14 As button:
+            Height: =52
+            OnSelect: =Navigate(Report);
+            Text: ="View Report"
+            X: =632
+            Y: =24
+            ZIndex: =7
+
+        Label15 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =43
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.PatientEmail
+            Width: =255
+            X: =299
+            Y: =33
+            ZIndex: =8
+

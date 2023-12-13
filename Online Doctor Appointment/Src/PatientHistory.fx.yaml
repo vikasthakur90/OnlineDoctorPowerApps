@@ -1,0 +1,140 @@
+PatientHistory As screen:
+
+    Component1_6 As Component1:
+        Height: =691
+        MenuItems: |-
+            =Table(
+                {
+                    Menulabel: "Home",
+                    MenuIcon: Icon.People,
+                    MenuScreeNavigate: PatientHome,
+                    MenuId:1
+                },
+                {
+                    Menulabel: "Patient Appointment History",
+                    MenuIcon: Icon.History,
+                    MenuScreeNavigate: PatientHistory,
+                    MenuId:2
+                },
+                {
+                    Menulabel: "Logout",
+                    MenuIcon: Icon.Leave,
+                    MenuScreeNavigate: PatientLogin,
+                    MenuId:4
+                }
+            
+            )
+        Width: =319
+
+    "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Items: =patientHis
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =104
+        Width: =926
+        X: =370
+        Y: =96
+        ZIndex: =2
+
+        Image9 As image:
+            Height: =72
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =72
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =103
+            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1.Size * 1.8)) / 2
+            ZIndex: =2
+
+        Subtitle1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =24
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: =ThisItem.PatientName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =332
+            X: =Title1.X
+            Y: =16
+            ZIndex: =3
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator1 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =96
+            ZIndex: =5
+
+        Rectangle8 As rectangle:
+            Height: =Parent.TemplateHeight - Separator1.Height
+            OnSelect: =Select(Parent)
+            Visible: =If(ThisItem.IsSelected, true, false)
+            Width: =4
+            ZIndex: =6
+
+        Label11 As label:
+            Height: =29
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Doctor Name:"&ThisItem.DocName
+            Width: =261
+            X: =103
+            Y: =48
+            ZIndex: =7
+
+        Label12 As label:
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |-
+                ="DOA: "&ThisItem.DOA
+            X: =428
+            Y: =28
+            ZIndex: =8
+
+        Label14 As label:
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: =ThisItem.Disease
+            X: =646
+            Y: =28
+            ZIndex: =9
+

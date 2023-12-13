@@ -1,0 +1,265 @@
+Report As screen:
+
+    Rectangle9 As rectangle:
+        Fill: =RGBA(56, 96, 178, 0.35)
+        Height: =559
+        Width: =616
+        X: =354
+        Y: =57
+        ZIndex: =1
+
+    FormViewer1 As formViewer:
+        DataSource: =Appointment
+        Height: =526
+        Item: =Gallery8.Selected
+        NumberOfColumns: =1
+        Width: =568
+        X: =382
+        Y: =90
+        ZIndex: =2
+
+        PatientName_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="PatientName"
+            Default: =ThisItem.PatientName
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Appointment],DataSourceInfo.DisplayName,"PatientName")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =52
+            Required: =true
+            Width: =568
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey25 As label:
+                Height: =34
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =23
+                Y: =2
+                ZIndex: =1
+
+            DataCardValue24 As label:
+                DisplayMode: =Parent.DisplayMode
+                Height: =52
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =352
+                X: =201
+                Y: =2
+                ZIndex: =2
+
+        PatientEmail_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="PatientEmail"
+            Default: =ThisItem.PatientEmail
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Appointment],DataSourceInfo.DisplayName,"PatientEmail")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =78
+            Required: =true
+            Width: =568
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey26 As label:
+                AutoHeight: =true
+                Height: =34
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue25 As label:
+                DisplayMode: =Parent.DisplayMode
+                Height: =43
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =287
+                X: =197
+                Y: =10
+                ZIndex: =2
+
+        Gender_DataCard4 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Gender"
+            Default: =ThisItem.Gender
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Appointment],DataSourceInfo.DisplayName,"Gender")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =true
+            Update: =DataCardValue26.Selected
+            Width: =568
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey27 As label:
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =508
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue26 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =ThisItem.Gender
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
+                Items: |
+                    =Choices([@Appointment].Gender)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Width: =180
+                X: =186
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage25 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue26.Y + DataCardValue26.Height
+                ZIndex: =3
+
+            StarVisible25 As label:
+                Align: =Align.Center
+                Height: =DataCardKey27.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey27.Y
+                ZIndex: =4
+
+        DOA_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="DOA"
+            Default: =ThisItem.DOA
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Appointment],DataSourceInfo.DisplayName,"DOA")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =true
+            Width: =568
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey28 As label:
+                Height: =47
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =102
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue27 As label:
+                DisplayMode: =Parent.DisplayMode
+                Height: =47
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =366
+                X: =153
+                Y: =10
+                ZIndex: =2
+
+        Disease_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Disease"
+            Default: =ThisItem.Disease
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Appointment],DataSourceInfo.DisplayName,"Disease")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =78
+            Required: =true
+            Width: =568
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey29 As label:
+                AutoHeight: =true
+                Height: =34
+                Size: =18
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue28 As label:
+                DisplayMode: =Parent.DisplayMode
+                Height: =43
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =18
+                Text: =Parent.Default
+                Width: =392
+                X: =146
+                Y: =10
+                ZIndex: =2
+
+    Arrow1 As arrow.backArrow:
+        OnSelect: =Back()
+        X: =86
+        Y: =7
+        ZIndex: =3
+
+    Button15 As button:
+        Height: =48
+        OnSelect: |
+            =Patch(Appointment,First(Filter(Appointment,PatientEmail = Gallery8.Selected.PatientEmail && PatientName = Gallery8.Selected.PatientName)),{Status:"Checked"});
+            ClearCollect(appoint1,LookUp(Appointment,DocEmail=docemail && DOA = Today() && Status = "Pending"));
+            Navigate(DoctorHome);
+        Text: ="Checked"
+        Width: =172
+        X: =668
+        Y: =477
+        ZIndex: =4
+
+    Button15_1 As button:
+        Fill: =RGBA(255, 0, 0, 1)
+        Height: =48
+        OnSelect: =Navigate(DoctorHome);
+        Text: ="Back"
+        Width: =172
+        X: =432
+        Y: =477
+        ZIndex: =5
+

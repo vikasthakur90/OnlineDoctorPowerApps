@@ -1,0 +1,25 @@
+HomePage As screen:
+
+    Image4 As image:
+        Height: =259
+        Image: ='doctor-app-online-inner-img1'
+        ImagePosition: =ImagePosition.Fill
+        Width: =1366
+        Y: =100
+        ZIndex: =9
+
+    Button2 As button:
+        Height: =58
+        Text: ="Book an Appointment"
+        Width: =313
+        X: =138
+        Y: =208
+        ZIndex: =10
+
+    Footer_1 As Footer:
+        Y: =528
+        ZIndex: =23
+
+    Header_1 As Header:
+        ZIndex: =24
+

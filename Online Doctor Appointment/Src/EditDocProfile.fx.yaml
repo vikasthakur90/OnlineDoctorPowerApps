@@ -1,0 +1,32 @@
+EditDocProfile As screen:
+
+    Component1_5 As Component1:
+        Height: =768
+        MenuItems: |-
+            =Table(
+                {
+                    Menulabel: "Today Appointment",
+                    MenuIcon: Icon.CalendarBlank,
+                    MenuScreeNavigate: DoctorHome,
+                    MenuId:1
+                },
+                {
+                    Menulabel: "Patient List",
+                    MenuIcon: Icon.DetailList,
+                    MenuScreeNavigate: PatientList,
+                    MenuId:2
+                },{
+                    Menulabel: "Edit Profile",
+                    MenuIcon: Icon.Edit,
+                    MenuScreeNavigate: EditDocProfile,
+                    MenuId:3
+                },
+                {
+                    Menulabel: "Logout",
+                    MenuIcon: Icon.Leave,
+                    MenuScreeNavigate: DoctorLogin,
+                    MenuId:4
+                }
+            
+            )
+
